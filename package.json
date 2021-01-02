@@ -10,7 +10,7 @@
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
-    "start:dev": "nest start --watch",
+    "dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
@@ -18,20 +18,30 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "generate": "prisma generate",
+    "db:push": "prisma db push --preview-feature",
+    "db:save": "prisma migrate save --experimental",
+    "db:up": "prisma migrate up --experimental",
+    "db:up:stage": "dotenv -e ./prisma/.env.stage -- prisma migrate up --experimental",
+    "db:up:prod": "dotenv -e ./prisma/.env.production -- prisma migrate up --experimental"
   },
   "dependencies": {
     "@nestjs/common": "^7.0.0",
+    "@nestjs/config": "^0.6.1",
     "@nestjs/core": "^7.0.0",
     "@nestjs/platform-express": "^7.0.0",
+    "@prisma/client": "2.13.1",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^6.5.4"
+    "rxjs": "^6.5.4",
+    "short-unique-id": "^3.2.3"
   },
   "devDependencies": {
     "@nestjs/cli": "^7.0.0",
     "@nestjs/schematics": "^7.0.0",
     "@nestjs/testing": "^7.0.0",
+    "@prisma/cli": "2.13.1",
     "@types/express": "^4.17.3",
     "@types/jest": "26.0.10",
     "@types/node": "^13.9.1",
