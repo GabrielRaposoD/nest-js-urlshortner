@@ -37,7 +37,8 @@
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^6.5.4",
-    "short-unique-id": "^3.2.3"
+    "short-unique-id": "^3.2.3",
+    "ts-node": "9.0.0"
   },
   "devDependencies": {
     "@nestjs/cli": "^7.0.0",
@@ -58,7 +59,6 @@
     "supertest": "^4.0.2",
     "ts-jest": "26.2.0",
     "ts-loader": "^6.2.1",
-    "ts-node": "9.0.0",
     "tsconfig-paths": "^3.9.0",
     "typescript": "^3.7.4"
   },
